@@ -130,7 +130,7 @@ public class AddEmployee extends JFrame{
 
 
                 try {
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurantdb", "root", "Lem49uel28791Br63");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurantdb", "root", "root");
 
                     String query = "INSERT INTO employee values('"+ id1 + "','" + name1 + "','" + ssn1 + "','" + dateOfHire1 + "','" +
                             hours1 + "','" + position1 + "','" + wage1 + "')";
