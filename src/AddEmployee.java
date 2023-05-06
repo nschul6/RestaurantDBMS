@@ -26,7 +26,7 @@ public class AddEmployee extends JFrame{
 
     public AddEmployee(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(450, 190, 1500, 597);
+        setBounds(450, 190, 1200, 597);
         setResizable(false);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -94,12 +94,12 @@ public class AddEmployee extends JFrame{
 
         JLabel lblId = new JLabel("Employee ID");
         lblId.setFont(new Font("Tahoma", Font.PLAIN, 20));
-        lblId.setBounds(542, 329, 139, 26);
+        lblId.setBounds(542, 400, 179, 26);
         contentPane.add(lblId);
 
         id = new JTextField();
         id.setFont(new Font("Tahoma", Font.PLAIN, 32));
-        id.setBounds(707, 320, 228, 50);
+        id.setBounds(707, 400, 228, 50);
         contentPane.add(id);
         id.setColumns(10);
 
