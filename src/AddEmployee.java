@@ -35,7 +35,7 @@ public class AddEmployee extends JFrame{
 
         JLabel lblNewUserRegister = new JLabel("Add New Employee");
         lblNewUserRegister.setFont(new Font("Times New Roman", Font.PLAIN, 42));
-        lblNewUserRegister.setBounds(362, 52, 325, 50);
+        lblNewUserRegister.setBounds(362, 52, 400, 50);//325
         contentPane.add(lblNewUserRegister);
 
         JLabel lblName = new JLabel("Name");
