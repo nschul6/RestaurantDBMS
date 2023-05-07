@@ -122,7 +122,7 @@ public class AddFoodItem extends JFrame {
                         JOptionPane.showMessageDialog(btnNewButton, "This employee already exists");
                     } else {
                         JOptionPane.showMessageDialog(btnNewButton,
-                                "Employee " + name1 + "has been added");
+                                "Item " + name1 + " has been added");
                     }
                     connection.close();
                 } catch (Exception exception) {
