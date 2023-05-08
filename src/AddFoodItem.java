@@ -20,6 +20,7 @@ public class AddFoodItem extends JFrame {
     private JTextField season;
     private JTextField supplierId;
     private JButton btnNewButton;
+    private JButton backButton;
 
     public AddFoodItem() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -101,6 +102,14 @@ public class AddFoodItem extends JFrame {
         id.setColumns(10);
 
         btnNewButton = new JButton("Add");
+        backButton = new JButton("Back");
+        backButton.addActionListener(e->{
+            if(e.getSource()==backButton){
+                dispose();
+                MenuOptions menuOptions = new MenuOptions();
+                menuOptions.setVisible(true);
+            }
+        });
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String id1 = id.getText();
@@ -119,7 +128,7 @@ public class AddFoodItem extends JFrame {
                     Statement sta = connection.createStatement();
                     int x = sta.executeUpdate(query);
                     if (x == 0) {
-                        JOptionPane.showMessageDialog(btnNewButton, "This employee already exists");
+                        JOptionPane.showMessageDialog(btnNewButton, "This item already exists");
                     } else {
                         JOptionPane.showMessageDialog(btnNewButton,
                                 "Item " + name1 + " has been added");
@@ -133,5 +142,9 @@ public class AddFoodItem extends JFrame {
         btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
         btnNewButton.setBounds(399, 447, 259, 74);
         contentPane.add(btnNewButton);
+
+        backButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        backButton.setBounds(100, 447, 259, 74);
+        contentPane.add(backButton);
     }
 }

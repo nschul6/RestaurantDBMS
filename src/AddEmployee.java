@@ -23,6 +23,7 @@ public class AddEmployee extends JFrame{
     DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
     private JFormattedTextField dateOfHire;
     private JButton btnNewButton;
+    private JButton backButton;
 
     public AddEmployee(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -114,6 +115,14 @@ public class AddEmployee extends JFrame{
         contentPane.add(position);
 
         btnNewButton = new JButton("Add");
+        backButton = new JButton("Back");
+        backButton.addActionListener(e->{
+            if(e.getSource()==backButton){
+                dispose();
+                EmployeeOptions employeeOptions = new EmployeeOptions();
+                employeeOptions.setVisible(true);
+            }
+        });
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String id1 = id.getText();
@@ -149,8 +158,14 @@ public class AddEmployee extends JFrame{
                 }
             }
         });
+
         btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
-        btnNewButton.setBounds(399, 447, 259, 74);
+        btnNewButton.setBounds(440, 447, 259, 74);
         contentPane.add(btnNewButton);
+
+        backButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        backButton.setBounds(100, 447, 259, 74);
+        contentPane.add(backButton);
+
     }
 }

@@ -111,7 +111,7 @@ public class CreateRestaurant extends JFrame{
                     Statement sta = connection.createStatement();
                     int x = sta.executeUpdate(query);
                     if (x == 0) {
-                        JOptionPane.showMessageDialog(btnNewButton, "This employee already exists");
+                        JOptionPane.showMessageDialog(btnNewButton, "This restaurant already exists");
                     } else {
                         JOptionPane.showMessageDialog(btnNewButton,
                                 "Restaurant " + name1 + " has been added");
