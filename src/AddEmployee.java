@@ -35,7 +35,7 @@ public class AddEmployee extends JFrame{
 
         JLabel lblNewUserRegister = new JLabel("Add New Employee");
         lblNewUserRegister.setFont(new Font("Times New Roman", Font.PLAIN, 42));
-        lblNewUserRegister.setBounds(362, 52, 400, 50);//325
+        lblNewUserRegister.setBounds(362, 52, 400, 50);
         contentPane.add(lblNewUserRegister);
 
         JLabel lblName = new JLabel("Name");
@@ -63,7 +63,7 @@ public class AddEmployee extends JFrame{
         ssn.setFont(new Font("Tahoma", Font.PLAIN, 32));
         ssn.setBounds(214, 235, 228, 50);
         contentPane.add(ssn);
-        ssn.setColumns(10);
+        ssn.setColumns(9);//changed ssn columns from 10 to 9
 
         dateOfHire = new JFormattedTextField(format);
         dateOfHire.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -141,7 +141,7 @@ public class AddEmployee extends JFrame{
                         JOptionPane.showMessageDialog(btnNewButton, "This employee already exists");
                     } else {
                         JOptionPane.showMessageDialog(btnNewButton,
-                                "Employee " + name1 + "has been added");
+                                "Employee " + name1 + " has been added");
                     }
                     connection.close();
                 } catch (Exception exception) {
