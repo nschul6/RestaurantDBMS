@@ -6,7 +6,8 @@ public class Main {
         EventQueue.invokeLater(new Runnable(){
             public void run(){
                 try{
-                    AddEmployee frame = new AddEmployee();
+                    AddTable frame = new AddTable();
+                    //AddEmployee frame = new AddEmployee();
                     frame.setVisible(true);
                 }catch(Exception e){
                     e.printStackTrace();
