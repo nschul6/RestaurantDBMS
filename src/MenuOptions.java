@@ -1,15 +1,23 @@
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.*;
-
-public class LaunchPage extends JFrame {
+public class MenuOptions extends JFrame{
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private JButton button = new JButton("View Employees");
-    private JButton button2 = new JButton("View Menu");
-    private JButton button3 = new JButton("View Orders");
-    private JButton button4 = new JButton("View Tables");
-    public LaunchPage(){
+    private JButton button = new JButton("View Menu");
+    private JButton button2 = new JButton("Add Food Item");
+    private JButton button3 = new JButton("Delete Food Item");
+    private JButton button4 = new JButton("Back");
+    public MenuOptions(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 500, 400);
         setResizable(false);
@@ -22,9 +30,7 @@ public class LaunchPage extends JFrame {
         button.setFocusable(false);
         button.addActionListener(e->{
             if(e.getSource()==button){
-                dispose();
-                EmployeeOptions employeeOptions = new EmployeeOptions();
-                employeeOptions.setVisible(true);
+
             }
         });
         button.setFont(new Font("Tahoma", Font.PLAIN, 22));
@@ -35,8 +41,8 @@ public class LaunchPage extends JFrame {
         button2.addActionListener(e->{
             if(e.getSource()==button2){
                 dispose();
-                MenuOptions menuOptions = new MenuOptions();
-                menuOptions.setVisible(true);
+                AddFoodItem addFoodItem = new AddFoodItem();
+                addFoodItem.setVisible(true);
             }
         });
         button2.setFont(new Font("Tahoma", Font.PLAIN, 22));
@@ -56,7 +62,9 @@ public class LaunchPage extends JFrame {
         button4.setFocusable(false);
         button4.addActionListener(e->{
             if(e.getSource()==button4){
-
+                dispose();
+                LaunchPage launchPage = new LaunchPage();
+                launchPage.setVisible(true);
             }
         });
         button4.setFont(new Font("Tahoma", Font.PLAIN, 22));
