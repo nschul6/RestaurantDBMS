@@ -20,6 +20,12 @@ public class AddOrder extends JFrame {
     private JButton backButton;
 
     public AddOrder() {
+
+        //open frames for reference
+        //ViewEmployees viewEmployees = new ViewEmployees();
+        //viewEmployees.setVisible(true);
+
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 1200, 597);
         setResizable(false);

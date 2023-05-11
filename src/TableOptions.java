@@ -2,13 +2,13 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-public class OrderOptions extends JFrame {
+public class TableOptions extends JFrame {
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private JButton button = new JButton("View Orders");
-    private JButton button2 = new JButton("Add Order");
+    private JButton button = new JButton("View Tables");
+    private JButton button2 = new JButton("Add Table");
     private JButton button4 = new JButton("Back");
-    public OrderOptions(){
+    public TableOptions(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 500, 400);
         setResizable(false);
@@ -22,7 +22,7 @@ public class OrderOptions extends JFrame {
         button.addActionListener(e->{
             if(e.getSource()==button){//if the button is selected, create frame for view employees
                 dispose();
-                ViewOrders frame = new ViewOrders();
+                ViewTables frame = new ViewTables();
                 frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
                 frame.pack();
                 frame.setVisible(true);
@@ -36,8 +36,8 @@ public class OrderOptions extends JFrame {
         button2.addActionListener(e->{
             if(e.getSource()==button2){
                 dispose();
-                AddOrder frame = new AddOrder();
-                frame.setVisible(true);
+                AddTable addTable = new AddTable();
+                addTable.setVisible(true);
             }
         });
         button2.setFont(new Font("Tahoma", Font.PLAIN, 22));

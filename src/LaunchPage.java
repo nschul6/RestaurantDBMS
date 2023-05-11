@@ -9,6 +9,7 @@ public class LaunchPage extends JFrame {
     private JButton button2 = new JButton("View Menu");
     private JButton button3 = new JButton("View Orders");
     private JButton button4 = new JButton("View Tables");
+    private JButton button5 = new JButton("View Suppliers");
     public LaunchPage(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 500, 400);
@@ -60,12 +61,26 @@ public class LaunchPage extends JFrame {
         button4.addActionListener(e->{
             if(e.getSource()==button4){
                 dispose();
-                AddTable addTable = new AddTable();
-                addTable.setVisible(true);
+                TableOptions frame = new TableOptions();
+                frame.setVisible(true);
+                //AddTable addTable = new AddTable();
+                //addTable.setVisible(true);
             }
         });
         button4.setFont(new Font("Tahoma", Font.PLAIN, 22));
         contentPane.add(button4);
+
+        button5.setBounds(140,260,200,40);
+        button5.setFocusable(false);
+        button5.addActionListener(e->{
+            if(e.getSource()==button5){
+                dispose();
+                ViewSuppliers frame = new ViewSuppliers();
+                frame.setVisible(true);
+            }
+        });
+        button5.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        contentPane.add(button5);
 
     }
 }
