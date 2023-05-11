@@ -7,7 +7,6 @@ public class OrderOptions extends JFrame{
     private JPanel contentPane;
     private JButton button = new JButton("View Orders");
     private JButton button2 = new JButton("Add Order");
-    private JButton button3 = new JButton("Complete Order");
     private JButton button4 = new JButton("Back");
     public OrderOptions(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,16 +44,6 @@ public class OrderOptions extends JFrame{
         });
         button2.setFont(new Font("Tahoma", Font.PLAIN, 22));
         contentPane.add(button2);
-
-        button3.setBounds(140,180,200,40);
-        button3.setFocusable(false);
-        button3.addActionListener(e->{
-            if(e.getSource()==button3){
-                //complete order
-            }
-        });
-        button3.setFont(new Font("Tahoma", Font.PLAIN, 22));
-        contentPane.add(button3);
 
         button4.setBounds(140,220,200,40);
         button4.setFocusable(false);
