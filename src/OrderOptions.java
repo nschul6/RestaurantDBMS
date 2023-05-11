@@ -36,7 +36,11 @@ public class OrderOptions extends JFrame{
         button2.setFocusable(false);
         button2.addActionListener(e->{
             if(e.getSource()==button2){
-                //add order
+                dispose();
+                AddOrder frame = new AddOrder();
+                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
+                frame.pack();
+                frame.setVisible(true);
             }
         });
         button2.setFont(new Font("Tahoma", Font.PLAIN, 22));

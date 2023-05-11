@@ -2,9 +2,14 @@ import java.awt.*;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 public class EmployeeWage extends JFrame
 {
+    private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
+    private JButton button = new JButton("Back");
+
     public EmployeeWage()
     {
         ArrayList columnNames = new ArrayList();
@@ -72,6 +77,27 @@ public class EmployeeWage extends JFrame
 
         for (int i = 0; i < columnNames.size(); i++ )
             columnNamesVector.add(columnNames.get(i));
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(450, 190, 500, 400);
+        setResizable(false);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+
+        button.setBounds(140,100,200,40);
+        button.setFocusable(false);
+        button.addActionListener(e->{
+            if(e.getSource()==button){//if the button is selected, create frame for view employees
+                dispose();
+                ViewEmployees frame = new ViewEmployees();
+                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+        button.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        contentPane.add(button);
 
         //  Create table with database data
         JTable table = new JTable(dataVector, columnNamesVector)

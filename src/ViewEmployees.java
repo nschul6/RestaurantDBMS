@@ -132,8 +132,8 @@ public class ViewEmployees extends JFrame {
         });
         button4.setFont(new Font("Tahoma", Font.PLAIN, 22));
         contentPane.add(button4);
-        //^the frame // we can use this style to add a back button to all queries.
-        //v the table
+        //^the frame
+        // v the table
 
         JTable table = new JTable(dataVector, columnNamesVector) {
             public Class getColumnClass(int column) {
