@@ -16,4 +16,4 @@ public class Main {
 
         });
     }
-}
+}// we can use the style from ViewEmployees to add a back button to all queries so program we dont lose the window early.
