@@ -3,14 +3,13 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.*;
-public class ViewOrders extends JFrame{
+
+public class TableBill extends JFrame{
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private JButton button = new JButton("Total Bill");
-    private JButton button2 = new JButton("Back");
-    public ViewOrders()
-    {
+    private JButton button = new JButton("Back");
+
+    public TableBill(){
         ArrayList columnNames = new ArrayList();
         ArrayList data = new ArrayList();
 
@@ -18,7 +17,12 @@ public class ViewOrders extends JFrame{
         String url = "jdbc:mysql://localhost:3306/restaurantdb";
         String userid = "root";
         String password = "root";
-        String sql = "SELECT * FROM order_";
+        String sql = "SELECT o.table_id, SUM(f.price) AS total_bill\n" +
+                "FROM order_ o\n" +
+                "JOIN food_item f ON o.item_id = f.id\n" +
+                "GROUP BY o.table_id;";
+
+        //"SELECT e.name, e.id\n" + "from employee as e\n" + "where wage = (Select Max(wage) as Max_wage from employee)";
 
         // Java SE 7 has try-with-resources
         // This will ensure that the sql objects are closed when the program
@@ -75,6 +79,7 @@ public class ViewOrders extends JFrame{
         for (int i = 0; i < columnNames.size(); i++ )
             columnNamesVector.add(columnNames.get(i));
 
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 500, 400);
         setResizable(false);
         contentPane = new JPanel();
@@ -86,27 +91,12 @@ public class ViewOrders extends JFrame{
         button.addActionListener(e->{
             if(e.getSource()==button){//if the button is selected, create frame for view employees
                 dispose();
-                TableBill frame = new TableBill();
-                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
-                frame.pack();
+                ViewOrders frame = new ViewOrders();
                 frame.setVisible(true);
             }
         });
         button.setFont(new Font("Tahoma", Font.PLAIN, 22));
         contentPane.add(button);
-        button2.setBounds(140,180,200,40);
-        button2.setFocusable(false);
-        button2.addActionListener(e->{
-            if(e.getSource()==button2){
-                dispose();
-                OrderOptions frame = new OrderOptions();
-                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
-                frame.pack();
-                frame.setVisible(true);
-            }
-        });
-        button2.setFont(new Font("Tahoma", Font.PLAIN, 22));
-        contentPane.add(button2);
 
         //  Create table with database data
         JTable table = new JTable(dataVector, columnNamesVector)

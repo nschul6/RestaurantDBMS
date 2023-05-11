@@ -85,7 +85,7 @@ public class AddOrder extends JFrame {
                 try {
                     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurantdb", "root", "root");
 
-                    String query = "INSERT INTO orders values('"+ id1 + "','" + tableId1 + "','" + itemId1 + "')";
+                    String query = "INSERT INTO order_ values('"+ id1 + "','" + tableId1 + "','" + itemId1 + "')";
 
                     Statement sta = connection.createStatement();
                     int x = sta.executeUpdate(query);
