@@ -31,6 +31,7 @@ public class EmployeeOptions extends JFrame{
         button.setFocusable(false);
         button.addActionListener(e->{
             if(e.getSource()==button){
+                dispose();
                 ViewEmployees frame = new ViewEmployees();
                 frame.pack();
                 frame.setVisible(true);
