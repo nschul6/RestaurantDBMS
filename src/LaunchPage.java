@@ -18,6 +18,7 @@ public class LaunchPage extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
+        //button is "view employees"
         button.setBounds(140,100,200,40);
         button.setFocusable(false);
         button.addActionListener(e->{

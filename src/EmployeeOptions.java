@@ -30,8 +30,12 @@ public class EmployeeOptions extends JFrame{
         button.setBounds(140,100,200,40);
         button.setFocusable(false);
         button.addActionListener(e->{
-            if(e.getSource()==button){
-
+            if(e.getSource()==button){//if the button is selected, create frame for view employees
+                    dispose();
+                    ViewEmployees frame = new ViewEmployees();
+                    frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
+                    frame.pack();
+                    frame.setVisible(true);
             }
         });
         button.setFont(new Font("Tahoma", Font.PLAIN, 22));
