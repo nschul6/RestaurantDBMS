@@ -31,7 +31,9 @@ public class EmployeeOptions extends JFrame{
         button.setFocusable(false);
         button.addActionListener(e->{
             if(e.getSource()==button){
-
+                ViewEmployees frame = new ViewEmployees();
+                frame.pack();
+                frame.setVisible(true);
             }
         });
         button.setFont(new Font("Tahoma", Font.PLAIN, 22));

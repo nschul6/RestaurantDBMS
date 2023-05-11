@@ -6,7 +6,7 @@ public class Main {
         EventQueue.invokeLater(new Runnable(){
             public void run(){
                 try{
-                    CreateRestaurant frame = new CreateRestaurant();
+                    LaunchPage frame = new LaunchPage();
                     frame.setVisible(true);
                 }catch(Exception e){
                     e.printStackTrace();

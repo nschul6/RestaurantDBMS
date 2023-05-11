@@ -1,36 +1,30 @@
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-public class MenuOptions extends JFrame{
+public class OrderOptions extends JFrame {
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private JButton button = new JButton("View Menu");
-    private JButton button2 = new JButton("Add Food Item");
-    private JButton button3 = new JButton("Delete Food Item");
+    private JButton button = new JButton("View Orders");
+    private JButton button2 = new JButton("Add Order");
+    private JButton button3 = new JButton("Complete Order");
     private JButton button4 = new JButton("Back");
-    public MenuOptions(){
+    public OrderOptions(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 500, 400);
         setResizable(false);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
-        contentPane.setLayout(null);
+        //contentPane.setLayout(null);
 
         button.setBounds(140,100,200,40);
         button.setFocusable(false);
         button.addActionListener(e->{
-            if(e.getSource()==button){
-                ViewMenu frame = new ViewMenu();
+            if(e.getSource()==button){//if the button is selected, create frame for view employees
+                dispose();
+                ViewOrders frame = new ViewOrders();
+                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
                 frame.pack();
                 frame.setVisible(true);
             }
@@ -43,8 +37,10 @@ public class MenuOptions extends JFrame{
         button2.addActionListener(e->{
             if(e.getSource()==button2){
                 dispose();
-                AddFoodItem addFoodItem = new AddFoodItem();
-                addFoodItem.setVisible(true);
+                AddOrder frame = new AddOrder();
+                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
+                frame.pack();
+                frame.setVisible(true);
             }
         });
         button2.setFont(new Font("Tahoma", Font.PLAIN, 22));
@@ -54,7 +50,7 @@ public class MenuOptions extends JFrame{
         button3.setFocusable(false);
         button3.addActionListener(e->{
             if(e.getSource()==button3){
-
+                //complete order
             }
         });
         button3.setFont(new Font("Tahoma", Font.PLAIN, 22));
@@ -65,8 +61,9 @@ public class MenuOptions extends JFrame{
         button4.addActionListener(e->{
             if(e.getSource()==button4){
                 dispose();
-                LaunchPage launchPage = new LaunchPage();
-                launchPage.setVisible(true);
+                LaunchPage frame = new LaunchPage();
+                frame.setVisible(true);
+                //back
             }
         });
         button4.setFont(new Font("Tahoma", Font.PLAIN, 22));
