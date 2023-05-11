@@ -59,7 +59,9 @@ public class LaunchPage extends JFrame {
         button4.setFocusable(false);
         button4.addActionListener(e->{
             if(e.getSource()==button4){
-
+                dispose();
+                AddTable addTable = new AddTable();
+                addTable.setVisible(true);
             }
         });
         button4.setFont(new Font("Tahoma", Font.PLAIN, 22));

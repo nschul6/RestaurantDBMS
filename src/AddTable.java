@@ -17,6 +17,7 @@ public class AddTable extends JFrame {
     private JTextField size;
     private JTextField waiter_id;
     private JTextField num_people;
+    private JButton backButton;
     private JButton btnNewButton;
 
     public AddTable(){
@@ -77,6 +78,15 @@ public class AddTable extends JFrame {
         contentPane.add(num_people);
         num_people.setColumns(2);
 
+        backButton = new JButton("Back");
+        backButton.addActionListener(e->{
+            if(e.getSource()==backButton){
+                dispose();
+                LaunchPage launchPage = new LaunchPage();
+                launchPage.setVisible(true);
+            }
+        });
+
         btnNewButton = new JButton("Add");
 
         btnNewButton.addActionListener(new ActionListener() {
@@ -106,5 +116,12 @@ public class AddTable extends JFrame {
                 }
             }
         });
+        btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        btnNewButton.setBounds(399, 447, 259, 74);
+        contentPane.add(btnNewButton);
+
+        backButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        backButton.setBounds(100, 447, 259, 74);
+        contentPane.add(backButton);
     }
 }

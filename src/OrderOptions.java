@@ -38,8 +38,6 @@ public class OrderOptions extends JFrame {
             if(e.getSource()==button2){
                 dispose();
                 AddOrder frame = new AddOrder();
-                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
-                frame.pack();
                 frame.setVisible(true);
             }
         });
