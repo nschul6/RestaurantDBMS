@@ -10,7 +10,7 @@ public class ViewEmployees extends JFrame {
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JButton button = new JButton("Sum Wages");
-    private JButton button2 = new JButton("5 Highest Earners");
+    private JButton button2 = new JButton("Highest Paid Employee");
     private JButton button3 = new JButton("Longest Hire");
     private JButton button4 = new JButton("Back");
 
@@ -87,7 +87,7 @@ public class ViewEmployees extends JFrame {
         button.addActionListener(e->{
             if(e.getSource()==button){//if the button is selected, create frame for view employees
                 dispose();
-                ViewEmployees frame = new ViewEmployees();
+                EmployeeWage frame = new EmployeeWage();
                 frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
                 frame.pack();
                 frame.setVisible(true);
@@ -95,22 +95,25 @@ public class ViewEmployees extends JFrame {
         });
         button.setFont(new Font("Tahoma", Font.PLAIN, 22));
         contentPane.add(button);
-        button3.setBounds(140,180,200,40);
+        button2.setBounds(140,180,200,40);
         button2.setFocusable(false);
         button2.addActionListener(e->{
             if(e.getSource()==button2){
                 dispose();
-                AddEmployee addEmployee = new AddEmployee();
-                addEmployee.setVisible(true);
+                HighestPaidEmployee frame = new HighestPaidEmployee();
+                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
+                frame.pack();
+                frame.setVisible(true);
             }
         });
         button2.setFont(new Font("Tahoma", Font.PLAIN, 22));
         contentPane.add(button2);
 
-        button4.setBounds(140,220,200,40);
+        button3.setBounds(140,220,200,40);
         button3.setFocusable(false);
         button3.addActionListener(e->{
             if(e.getSource()==button3){
+                //add jtable for query display
 
             }
         });
@@ -124,6 +127,7 @@ public class ViewEmployees extends JFrame {
                 dispose();
                 EmployeeOptions frame = new EmployeeOptions();
                 frame.setVisible(true);
+                //back
             }
         });
         button4.setFont(new Font("Tahoma", Font.PLAIN, 22));

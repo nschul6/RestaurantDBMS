@@ -1,86 +1,11 @@
-//order options////////////////////////////////////////////////////////////////////
-
-import java.awt.EventQueue;
-import java.awt.Font;
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-public class OrderOptions extends JFrame{
-    private static final long serialVersionUID = 1L;
-    private JPanel contentPane;
-    private JButton button = new JButton("View Orders");
-    private JButton button2 = new JButton("Add Order");
-    private JButton button3 = new JButton("Complete Order");
-    private JButton button4 = new JButton("Back");
-    public OrderOptions(){
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(450, 190, 500, 400);
-        setResizable(false);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(contentPane);
-        contentPane.setLayout(null);
-
-        button.setBounds(140,100,200,40);
-        button.setFocusable(false);
-        button.addActionListener(e->{
-            if(e.getSource()==button){//if the button is selected, create frame for view employees
-                dispose();
-                ViewOrders frame = new ViewOrders();
-                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
-                frame.pack();
-                frame.setVisible(true);
-            }
-        });
-        button.setFont(new Font("Tahoma", Font.PLAIN, 22));
-        contentPane.add(button);
-
-        button2.setBounds(140,140,200,40);
-        button2.setFocusable(false);
-        button2.addActionListener(e->{
-            if(e.getSource()==button2){
-                //add order
-            }
-        });
-        button2.setFont(new Font("Tahoma", Font.PLAIN, 22));
-        contentPane.add(button2);
-
-        button3.setBounds(140,180,200,40);
-        button3.setFocusable(false);
-        button3.addActionListener(e->{
-            if(e.getSource()==button3){
-                //complete order
-            }
-        });
-        button3.setFont(new Font("Tahoma", Font.PLAIN, 22));
-        contentPane.add(button3);
-
-        button4.setBounds(140,220,200,40);
-        button4.setFocusable(false);
-        button4.addActionListener(e->{
-            if(e.getSource()==button4){
-                dispose();
-                LaunchPage frame = new LaunchPage();
-                frame.setVisible(true);
-                //back
-            }
-        });
-        button4.setFont(new Font("Tahoma", Font.PLAIN, 22));
-        contentPane.add(button4);
-
-    }
-}
-
-//viewOrders/////////////////////////////////////////////////////////////////////////
-
 import java.awt.*;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
-import javax.swing.table.*;
 
-public class ViewOrders extends JFrame
+public class HighestPaidEmployee extends JFrame
 {
-    public ViewOrders()
+    public HighestPaidEmployee()
     {
         ArrayList columnNames = new ArrayList();
         ArrayList data = new ArrayList();
@@ -89,7 +14,7 @@ public class ViewOrders extends JFrame
         String url = "jdbc:mysql://localhost:3306/restaurantdb";
         String userid = "root";
         String password = "root";
-        String sql = "SELECT * FROM order_";
+        String sql = "SELECT e.name, e.id, e.wage, e.position\n" + "from employee as e\n" + "where wage = (Select Max(wage) as Max_wage from employee)";;
 
         // Java SE 7 has try-with-resources
         // This will ensure that the sql objects are closed when the program
