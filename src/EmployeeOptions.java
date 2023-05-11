@@ -25,7 +25,7 @@ public class EmployeeOptions extends JFrame{
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
-        contentPane.setLayout(null);
+        contentPane.setLayout(null);//?
 
         button.setBounds(140,100,200,40);
         button.setFocusable(false);

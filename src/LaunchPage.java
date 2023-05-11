@@ -47,7 +47,12 @@ public class LaunchPage extends JFrame {
         button3.setFocusable(false);
         button3.addActionListener(e->{
             if(e.getSource()==button3){
-
+                dispose();
+                OrderOptions frame = new OrderOptions();
+                frame.setDefaultCloseOperation( EXIT_ON_CLOSE );
+                frame.pack();
+                frame.setVisible(true);
+                //order options
             }
         });
         button3.setFont(new Font("Tahoma", Font.PLAIN, 22));
